@@ -1,8 +1,17 @@
 {
   "name": "larada",
+  "version": "0.1.0",
   "scripts": {
     "start": "ts-node example/index.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "prepublish": "yarn build"
+  },
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   },
   "devDependencies": {
     "@types/node": "^18",
@@ -11,11 +20,13 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@projectdysnomia/dysnomia": "^0.1.0",
     "getopts": "^2.3.0",
     "rambda": "^7.4.0",
     "shell-quote": "^1.8.0",
     "zod": "^3.20.6"
+  },
+  "peerDependencies": {
+    "@projectdysnomia/dysnomia": "^0.1.1"
   },
   "packageManager": "yarn@3.5.0"
 }

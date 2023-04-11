@@ -1,6 +1,5 @@
 import { Client, Message } from "@projectdysnomia/dysnomia";
-import { createExecutor } from "../lib/executor";
-import { defineCommand } from "../lib/command";
+import { createExecutor, defineCommand } from "../lib";
 import { z } from "zod";
 
 if (!process.env.TOKEN) throw new Error("TOKEN not found in environment.");
